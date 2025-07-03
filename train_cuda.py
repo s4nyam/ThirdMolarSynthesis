@@ -196,15 +196,15 @@ os.makedirs(checkpoint_dir, exist_ok=True)
 
 # Optional: Load from checkpoint if resuming training
 start_epoch = 0
-if os.path.exists("checkpoints/checkpoint_epoch_30.pth"):
-    start_epoch, losses = load_checkpoint("checkpoints/checkpoint_epoch_30.pth", net, opt)
+last_epoch = 255
+if os.path.exists("checkpoints/checkpoint_epoch_{}.pth".format(last_epoch)):
+    start_epoch, losses = load_checkpoint("checkpoints/checkpoint_epoch_{}.pth".format(last_epoch), net, opt)
     print(f"Resuming training from epoch {start_epoch}")
 
 
 # The training loop
-for epoch in range(n_epochs):
+for epoch in range(last_epoch+1, n_epochs):
     for x, y in tqdm(train_dataloader):
-        
         # Get some data and prepare the corrupted version
         x = x.to(device) * 2 - 1 # Data on the GPU (mapped to (-1, 1))
         y = y.to(device)
@@ -229,16 +229,14 @@ for epoch in range(n_epochs):
     # Print out the average of the last 100 loss values to get an idea of progress:
     avg_loss = sum(losses[-100:])/100
     print(f'Finished epoch {epoch}. Average of the last 100 loss values: {avg_loss:05f}')
-    
+    if epoch == 0:
+        continue  # Skip saving the first epoch
     if epoch % 15 == 0 or epoch == n_epochs - 1:
         save_checkpoint(epoch, net, opt, losses)
-
     # View the loss curve
     plt.plot(losses)
     plt.savefig("cuda0/loss_plot"+str(epoch)+".png",dpi=600)
     plt.close()
-    if epoch == 0:
-        continue  # Skip the first epoch for sampling
     if epoch % 15 == 0:
         # Sampling and saving images
         # Prepare random x to start from, plus some desired labels y
