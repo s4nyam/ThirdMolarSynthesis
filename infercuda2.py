@@ -58,7 +58,7 @@ print("\nInitializing model...")
 net = ClassConditionedUnet(num_classes=num_classes, class_emb_size=class_emb_size).to(device)
 
 # Load checkpoint
-checkpoint_path = "checkpoints/checkpoint_epoch_360.pth"
+checkpoint_path = "checkpoints/checkpoint_epoch_420.pth"
 print(f"Loading checkpoint from {checkpoint_path}...")
 checkpoint = torch.load(checkpoint_path, map_location=device)
 net.load_state_dict(checkpoint['model_state_dict'])
@@ -107,5 +107,5 @@ def generate_images(number_of_images_to_generate=8):
     print(f"\nGeneration complete! Saved {num_classes * number_of_images_to_generate} images to {output_dir}")
 
 if __name__ == "__main__":
-    number_of_images_to_generate = 100  # Adjust as needed
+    number_of_images_to_generate = 150  # Adjust as needed
     generate_images(number_of_images_to_generate)
