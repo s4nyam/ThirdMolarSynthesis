@@ -58,7 +58,7 @@ print("\nInitializing model...")
 net = ClassConditionedUnet(num_classes=num_classes, class_emb_size=class_emb_size).to(device)
 
 # Load checkpoint
-checkpoint_path = "checkpoints/checkpoint_epoch_360.pth"
+checkpoint_path = "checkpoints/checkpoint_epoch_405.pth"
 print(f"Loading checkpoint from {checkpoint_path}...")
 checkpoint = torch.load(checkpoint_path, map_location=device)
 net.load_state_dict(checkpoint['model_state_dict'])
