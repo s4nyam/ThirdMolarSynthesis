@@ -1,4 +1,0 @@
-find third_molar_project/cuda*/epoch*/* -name "*.png" -exec sh -c 'for f; do cp "$f" "export_for_sr/$(basename "${f%.png}")_$(cat /dev/urandom | tr -dc [:alnum:] | head -c 8).png"; done' sh {} +
-
-
-find third_molar_project/cuda*/epoch9*/* -name "*.png" -exec sh -c 'for f; do c=$(basename "$(dirname "$f")"); n=$(basename "${f%.png}"); r=$(tr -dc A-Za-z0-9 </dev/urandom | head -c8); cp "$f" "export_for_sr/${n}_${r}_${c}.png"; done' sh {} +
