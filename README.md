@@ -117,8 +117,9 @@ Ruben Pauwels<sup>1,10</sup>**
 ## More results
 
 
+
 <p align="center">
-<img width="1562" height="941" alt="image" src="https://github.com/user-attachments/assets/2d6a4abe-b1a9-488d-ac79-57ad6deeb5f5" />
+<img width="1557" height="942" alt="image" src="https://github.com/user-attachments/assets/3c0c68b9-0110-4045-8a3a-2f6773b15257" />
   <br>
   <em>
     Figure: 60 samples synthesized using GAN Model.
@@ -126,15 +127,13 @@ Ruben Pauwels<sup>1,10</sup>**
 </p>
 
 
-
 <p align="center">
-<img width="1557" height="942" alt="image" src="https://github.com/user-attachments/assets/3c0c68b9-0110-4045-8a3a-2f6773b15257" />
+<img width="1562" height="941" alt="image" src="https://github.com/user-attachments/assets/2d6a4abe-b1a9-488d-ac79-57ad6deeb5f5" />
   <br>
   <em>
     Figure: 60 samples synthesized using Diffusion Model.
   </em>
 </p>
-
 
 ## License
 
