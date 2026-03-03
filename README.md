@@ -1,4 +1,4 @@
-# PanoDiff-SR: Synthesizing Dental Panoramic Radiographs using Diffusion and Super-resolution
+# Synthesizing Third Molars with Denoising Diffusion Probabilistic Models and Generative Adversarial Networks
 
 [![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-preprint-red)](https://arxiv.org/abs/2507.09227v1)
@@ -8,30 +8,48 @@
 [![pyngrok](https://img.shields.io/badge/PyNgRok-7.2%2B-yellow)](https://pypi.org/project/pyngrok/)
 
 
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/wvClGg717OZvK86TCILc0EUC5ckEHvGn/image.png" alt="PanoDiff Teaser" width="800"/>
-</p>
-
-> 📢 Official PyTorch implementation of the **PanoDiff**:  
-> **PanoDiff-SR: Synthesizing Dental Panoramic Radiographs using Diffusion and Super-resolution**  
-> Sanyam	Jain, Bruna	Neves de Freitas, Andreas	Basse-O'Connor, Alexandros	Iosifidis, Ruben	Pauwels
-> [[Project]](https://github.com/s4nyam/PanoDiff) | [[Code]](https://github.com/s4nyam/PanoDiff)
+> 📢 Official PyTorch implementation of the **Third Molar and Mandibular Canal Synthesis**:  
+> **Synthesizing Third Molars with Denoising Diffusion Probabilistic Models and Generative Adversarial Networks**  
+> Sanyam Jain, Sara Haghighat, Johan Andreas Balle Rubak, Mostafa Aldesoki, Akhilanand Chaurasia, Sarah Sadat Ehsani, Faezeh Dehghan Ghanatkaman, Ahmad Badruddin Ghazali, Julien Issa, Basel Khalil, Rishi Ramani, Ruben Pauwels
+> [[Project]](https://github.com/s4nyam/ThirdMolarSynthesis) | [[Code]](https://github.com/s4nyam/ThirdMolarSynthesis)
 
 ---
-
 ## 🌟 Highlights
-- **Modular Design:** Two learning algorithms are used **Diffusion (DDPM, DDIM)** and **Super-Resolution (ST-transformer)** trained independently.
-- **Dataset:** Uses **five public datasets** with varying preprocessing and postprocessing inlcuding resize, rotation and crop.
-- **Diffusion:** Uses simple denoisinng diffusion probabilistic model for syntehsis with a attention-aware UNet backbone.
-- **SR:** Built upon **HAT-SR** with novel losses - pixel-wise loss (L_1), perceptual loss (L_percep), and adversarial loss (L_GAN).
-- **Real-vs-Fake Quiz:** A time-limited human in the loop activity to identify a given image as real or synthetic? Six dentists with varying experience were invited to play the quiz for 200 images (100 real and 100 fake).
+
+- **Dual Generative Framework:** We investigate both **Denoising Diffusion Probabilistic Models (DDPM/DDIM)** and **Generative Adversarial Networks (GANs)** in unconditional and class-conditional settings for third molar (3M) region-of-interest (ROI) synthesis.
+
+- **Multi-Dataset Curation:** Five publicly available panoramic radiograph datasets were harmonized through a unified preprocessing pipeline, including resizing, annotation scaling, cropping, padding, and spatial standardization, resulting in 5,416 expert-curated ROIs.
+
+- **Architecture-Level Innovation:** We introduce a **Spatially-Aware Excitation (SAE)** module within a modified FastGAN framework to improve anatomical plausibility by preserving spatially critical structures such as the mandibular canal and root apex.
+
+- **Conditional Diffusion Modeling:** A label-conditioned diffusion model is implemented using timestep-aware embeddings and FiLM-based modulation to enable controlled synthesis across seven clinically defined anatomical classes.
+
+- **Quantitative & Human Evaluation:** Synthetic realism is assessed using **Fréchet Inception Distance (FID)** and **Inception Score (IS)**, complemented by a structured human observer study in which eight dentists evaluated paired GAN and diffusion samples in a time-constrained real-vs-fake setting.
+
+- **Clinical-Oriented Analysis:** Inter-observer agreement (Fleiss’ κ and pairwise Cohen’s κ) was analyzed to understand perceptual variability in anatomical realism assessment.
 
 <p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/zu86EKZKoUyEMb84i8AmwbSd9nsM5knc/image.png" alt="Selected Examples" width="800"/>
+  <img width="680" height="317" alt="Conditional third molar ROIs"
+       src="https://github.com/user-attachments/assets/d0f29a15-bcd3-42d6-8bd9-2de2c06a1f16" />
   <br>
-  <em>Selected **synthetic examples** from our work that fooled most dentists.</em>
+  <em>
+    Figure: Conditional third molar ROIs for training (original), cGAN and cDiffusion models.
+    Clearly, the lower-quality synthesis of cGAN compared with cDiffusion can be observed.
+    Although cDiffusion does not yet produce high-quality images, it demonstrates clear improvement over cGAN.
+  </em>
 </p>
 
+
+<p align="center">
+  <img width="921" height="926" alt="Unconditional third molar ROIs"
+       src="https://github.com/user-attachments/assets/b16f97e1-2898-411a-9113-7dc51a340fcd" />
+  <br>
+  <em>
+    Figure: Unconditional third molar ROIs from the training dataset, GAN, and diffusion models.
+    No substantial perceptual differences are observed between GAN and diffusion synthesis
+    at the visual inspection level.
+  </em>
+</p>
 
 ## 📊 Dataset
 
