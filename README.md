@@ -59,7 +59,7 @@
 
 T-distributed stochastic neighbor embedding (t-SNE) plot of 500 random images picked from each source dataset.
 
-**Table**: Overview of dental radiography datasets used in our study. * indicates that the dataset was recently updated with 1500 more images, but we accessed it when it had 500 images. ~ indicates varying sizes in the dataset within the given resolution range. Abbreviations: ADLD – A dual-labeled dataset, DENTEX – Dental Enumeration and Diagnosis on Panoramic X-rays, TSXK – Teeth Segmentation on dental X-ray images, TUFTS – Tufts Dental Database, USPFORP – São Paulo dataset.
+**Table:** Public panoramic radiograph (PR) datasets used to curate the third molar (3M)–mandibular canal (MC) region-of-interest (ROI) dataset in this study. Only images with available third molar annotations were retained. All datasets were harmonized through a unified preprocessing pipeline including resizing, annotation scaling, standardized cropping, padding, and spatial alignment. * indicates that the dataset was later expanded, but only the originally available subset was used. ~ denotes variability in native image resolution within the dataset.
 
 | Abbr.    | Images | Format | Availability | Year | Country | Resolution |
 |---|---|---|---|---|---|---|
