@@ -29,7 +29,7 @@
 - **Clinical-Oriented Analysis:** Inter-observer agreement (Fleiss’ κ and pairwise Cohen’s κ) was analyzed to understand perceptual variability in anatomical realism assessment.
 
 <p align="center">
-  <img width="680" height="317" alt="Conditional third molar ROIs"
+  <img width="900" height="600" alt="Conditional third molar ROIs"
        src="https://github.com/user-attachments/assets/d0f29a15-bcd3-42d6-8bd9-2de2c06a1f16" />
   <br>
   <em>
@@ -41,7 +41,7 @@
 
 
 <p align="center">
-  <img width="921" height="926" alt="Unconditional third molar ROIs"
+  <img width="600" height="626" alt="Unconditional third molar ROIs"
        src="https://github.com/user-attachments/assets/b16f97e1-2898-411a-9113-7dc51a340fcd" />
   <br>
   <em>
@@ -57,7 +57,7 @@
   <img src="https://dl3.pushbulletusercontent.com/fNlF9Ytp2g0cGoIaGoekrZmB550SMKZh/image.png" alt="T sne" width="500"/>
 </p>
 
-T-distributed stochastic neighbor embedding (t-SNE) plot of 500 random images picked from each source dataset.
+T-distributed stochastic neighbor embedding (t-SNE) plot of 500 random images picked from each source dataset. (You can study more about dataset here - https://arxiv.org/pdf/2507.09227)
 
 **Table:** Public panoramic radiograph (PR) datasets used to curate the third molar (3M)–mandibular canal (MC) region-of-interest (ROI) dataset in this study. Only images with available third molar annotations were retained. All datasets were harmonized through a unified preprocessing pipeline including resizing, annotation scaling, standardized cropping, padding, and spatial alignment. * indicates that the dataset was later expanded, but only the originally available subset was used. ~ denotes variability in native image resolution within the dataset.
 
@@ -69,164 +69,7 @@ T-distributed stochastic neighbor embedding (t-SNE) plot of 500 random images pi
 | [TUFTS](https://tdd.ece.tufts.edu/) | 1000 | jpg | On Request | 2022 | USA | 1615×840 |
 | [USPFORP](https://pubmed.ncbi.nlm.nih.gov/38632036/) | 936 | jpg | On Request | 2024 | Brazil | 2903×1536 |
 
----
-
-## 🧠 Overview
-
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/CcSvKjSuqpj8wKQwb9XBlE4l9Br129wS/image.png" alt="PanoDiff Architecture" width="800"/>
-  <br>
-  <em>Figure: General principle of synthetic image generation through manifold representation. Consider a dataset of images {x<sub>k</sub>}<sub>k=1</sub><sup>n</sup>, where x<sub>k</sub> ∼ p(x). These images serve as samples from the target distribution p(x). A best sampler G<sub>θ</sub> is one such that x̂ = G<sub>θ</sub>(z), where z ∼ 𝒩(0, I), to produce high-quality samples resembling the true data distribution p.</em>
-</p>
-
-For the top-most figure in this readme:
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/wvClGg717OZvK86TCILc0EUC5ckEHvGn/image.png" alt="PanoDiff Working Process" width="800"/>
-  <br>
-  <em>Figure: Working of PanoDiff in three key steps: (1) In the forward phase, noise is added to the input image x<sub>t=0</sub> over t=1000 time steps, following a β-schedule (slow-start and fast-finish). The plot on the right shows pixel variation metrics converging to 0.5 because the image is pure noise at t=1000. (2) The reverse phase (in left) involves training a U-Net (using L<sub>1</sub> loss), shown on the left, such that it takes a random source image with a random noisy image at t. The trained U-Net predicts most of the noise given a noisy image at t. For comparison, an old method is shown (in right), which performs denoising through a slow, stochastic, step-by-step process, requiring hundreds to thousands of iterations to gradually remove noise using the frozen U-Net from the previous step (on the left). (3) The image generation process in PanoDiff involves iteratively predicting and removing noise from a noisy image x<sub>t=0</sub> using a frozen U-Net, resulting in a slightly less noisy image. The resulting image is added with noise and fed to the U-Net, which again predicts and removes noise. This process continues for <em>inference</em> time steps.</em>
-</p>
-
----
-
-## 📄 Visiblity (Need to update later)
-**PanoDiff-SR: Synthesizing Dental Panoramic Radiographs using Diffusion and Super-resolution**  
-Sanyam Jain, Bruna Neves de Freitas, Andreas Basse-O'Connor, Alexandros	Iosifidis, Ruben Pauwels
-[[GitHub]](https://github.com/s4nyam/panodiff) | [[PDF]](https://github.com/s4nyam/panodiff) | [[Project]](https://github.com/s4nyam/panodiff) | [[Results]](https://github.com/s4nyam/panodiff) | [[TarBall]](https://aarhusuniversitet-my.sharepoint.com/:f:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)?csf=1&web=1&e=3n9Chz) 
-
----
-
-## 📑 Table of Contents
-- [Installation](#installation)
-- [Model Zoo](#model-zoo)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [Results](#results)
-- [Citation](#citation)
-- [Downloads](#downloads)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
-
----
-
-## Installation
-
-1. **Installation:**
-   ```bash
-   git clone https://github.com/s4nyam/PanoDiff.git
-   cd panodiff
-   ```
-
-2. **Create a virtual environment:**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-
-3. **Install PyTorch:**
-   Install PyTorch following instructions from [PyTorch official site](https://pytorch.org/).
-
-**requirements.txt**
-```markdown
-h5py
-matplotlib
-natsort
-numpy
-opencv_contrib_python
-pandas
-scipy
-tqdm
-retinaface-pytorch
-diffusers
-basicSR
-einops
-nvitop
-flask
-firebase-admin
-pyngrok
-```
-
----
-
-## Model Zoo
-Pretrained Models for PanoDiff and SR are avaialble here in table below: 
-
-We release pretrained models for PanoDiff and SR-transformer, you can load these models and use it for independent purposes.
-
-### Diffusion Models
-| Configuration      | File          |
-|--------------------|------------------|
-| Epoch 11               | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/PanoDiff_pretrained/ddpm-model-ep11.pth?csf=1&web=1&e=DzbeLf)    |
-| Epoch 33      | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/PanoDiff_pretrained/ddpm-model-ep33.pth?csf=1&web=1&e=jHa32E) | 
-| Epoch 55 | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/PanoDiff_pretrained/ddpm-model-ep55.pth?csf=1&web=1&e=OMAlv9) |
-| Epoch 77 | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/PanoDiff_pretrained/ddpm-model-ep77.pth?csf=1&web=1&e=CqjPJc) |
-| Epoch 99 | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/PanoDiff_pretrained/ddpm-model-ep99.pth?csf=1&web=1&e=xxDXps) |
-| Epoch 110 | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/PanoDiff_pretrained/ddpm-model-ep110.pth?csf=1&web=1&e=8Mc6Kv) |
-
-
-### SR Models
-| Configuration      | File           |
-|--------------------|------------------|
-| Real_HAT_GAN_SRx4_finetuned               | [Link](https://aarhusuniversitet-my.sharepoint.com/:u:/r/personal/au775886_uni_au_dk/Documents/Pano%20Diff%20(Public)/ModelZoo/SR_pretrained/trained_models/Real_HAT_GAN_SRx4_finetuned.pth?csf=1&web=1&e=RDUFEI)    |
-
-
----
-
-## Training
-
-Train PanoDiff and SR with the provided "how-to" files in each nested directories.
-
-
-**Training Details:**
-
-| Configuration      | Lowest            | Highest          |
-|--------------------|-------------------|------------------|
-| GPU               | RTX 6000 48GB × 1 | A100 80GB × 4    |
-| RAM               | 128 GB            | 256 GB           |
-| Train Batch       | 4                 | 16               |
-| Evaluation Batch  | 16                | 48               |
-| Input Resolution  | 256×128×3         | 256×128×3        |
-
----
-
-## Evaluation
-
-(Coming Soon!)
-
----
-
-## Results
-
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/Z4p3O7Esis2b0kpeELr1jCW0cqzf9kRD/image.png" alt="PanoDiffSR Epochs" width="800"/>
-  <br>
-  <em>Figure: Comparison of generated PRs across epochs. Each column represents a different epoch from left to right, showing the images generated using same unique seed per row.</em>
-</p>
-
-
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/IWhTJVlMsVK41NLhMmhx5sQREorwb4j6/image.png" alt="Results from Dentists" width="900"/>
-  <br>
-  <em>Table: Real vs synthetic image combinations and respective Fréchet inception distance (FID). Lower scores indicate greater similarity. <br/> Figure: Pie charts for each observer showing distribution of correct and incorrect decisions. ‘Fully’ and ‘partially’ refers to the level of certainty indicated by the observer for a given answer, as described in the text.</em>
-</p>
-
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/Md1JLGjyrRviPOF8ES7PmAKFVMp9V7uN/image.png" alt="TP,TN,FP,FN" width="800"/>
-  <br>
-  <em>Figure: Examples of PRs from expert evaluation. Within each category, the first row corresponds to fully certain (FC) and the second row to partially certain (PC) responses. Examples were selected for each category based on the majority of the observers’ assessments.</em>
-</p>
-
-<p align="center">
-  <img src="https://dl3.pushbulletusercontent.com/woqS84fuYDbBVLZwLX6LV3biAeQxyvS2/image.png" alt="AMs" width="800"/>
-  <br>
-  <em>Figure: Attention maps generated using a trained ViT for two classes - top three rows for real images and bottom three rows for synthetic images. The confidence value ’C’ represents the ViT classifier’s output and ranges from 0 (for synthetic) to 1 (for real). Prediction values in red correspond to incorrect classification..</em>
-</p>
-
----
-
-## Citation
-
-If you find this work useful, please cite our paper:
+To use this table in your reseach, you can cite using: 
 
 ```bibtex
 @misc{jain2025panodiffsrsynthesizingdentalpanoramic,
@@ -239,27 +82,37 @@ If you find this work useful, please cite our paper:
       url={https://arxiv.org/abs/2507.09227}, 
 }
 ```
-
 ---
 
-## Downloads
-
-We release several offline-material for reproducing the experiments and results (but not limited to). These downloads will also be useuful if you want to build on top of this work. Please consider to use the citation code above for future work.
-
-[Diffusion Models📥](https://archive.org/download/panodiff/trained_models/)
-
-[SR Models📥](https://archive.org/download/panodiff/experiments/)
-
----
 
 ## Acknowledgments
 
 - Gratitude to the open-source community for datasets and tools.
-- Together with Dept of Dentistry and Oral Health AU Denmark, Dept of Mathematics AU Denmark, and Computer Science Unit Tampere University Finland.
-- Computing resources were supported by ECE and MaLeCi Aarhus University, Denmark
+- Computing resources were supported by ECE and MaLeCi Aarhus University, Denmark. LUMI supercomputers were also used during the experimentation and ablation studies.
+
+**Sanyam Jain<sup>1,10*</sup>, Sara Haghighat<sup>1,10</sup>, Johan Andreas Balle Rubak<sup>1</sup>,  
+Mostafa Aldesoki<sup>2,10</sup>, Akhilanand Chaurasia<sup>3,10</sup>,  
+Sarah Sadat Ehsani<sup>4,10</sup>, Faezeh Dehghan Ghanatkaman<sup>5,10</sup>,  
+Ahmad Badruddin Ghazali<sup>6,10</sup>, Julien Issa<sup>7,10</sup>,  
+Basel Khalil<sup>8,10</sup>, Rishi Ramani<sup>9,10</sup>,  
+Ruben Pauwels<sup>1,10</sup>**
+
+---
+
+<sup>1</sup> Department of Dentistry and Oral Health, Aarhus University, Aarhus, Denmark  
+<sup>2</sup> Private Dental Practice Dr. Jörg Deike, Hannover, Germany  
+<sup>3</sup> Department of Oral Medicine and Radiology, King George’s Medical University, Lucknow, India  
+<sup>4</sup> Department of Diagnosis and Oral Health, University of Louisville School of Dentistry, Louisville, USA  
+<sup>5</sup> Faculty of Dentistry, Islamic Azad University of Medical Sciences, Tehran, Iran  
+<sup>6</sup> Department of Oral Maxillofacial Surgery & Oral Diagnosis, Kulliyyah of Dentistry, International Islamic University Malaysia  
+<sup>7</sup> Department of Oral Radiology & Digital Dentistry, Academic Centre for Dentistry Amsterdam (ACTA), University of Amsterdam and Vrije Universiteit Amsterdam, Amsterdam, The Netherlands  
+<sup>8</sup> Private Practice, Stockholm, Sweden  
+<sup>9</sup> Melbourne Dental School, University of Melbourne, Victoria, Australia  
+<sup>10</sup> ITU/WHO/WIPO Global Initiative on Artificial Intelligence for Health, Topic Group Oral Health, Geneva, Switzerland  
+
+📧 **Correspondence:** ruben.pauwels@dent.au.dk
 
 ---
 
 ## License
 
-(Coming Soon!)
