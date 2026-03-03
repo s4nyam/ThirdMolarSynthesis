@@ -1,0 +1,21 @@
+Mandibular Canal Segmentation - Evaluation Summary
+============================================================
+
+Evaluation Date: 2025-07-17 20:48:05.189728
+Model: YOLOv11 Segmentation (Nano)
+Task: Mandibular Canal Segmentation
+
+Dataset Information:
+- train: 262 images with Mandibular Canal
+- valid: 38 images with Mandibular Canal
+- test: 21 images with Mandibular Canal
+
+Output Directories:
+- Predictions: /home/sj/working_dir/3m/test_data_evaluated/
+- Comparisons: /home/sj/working_dir/3m/comparison_images/
+- Model file: /home/sj/working_dir/3m/mandibular_canal_yolo11_best.pt
+
+Usage Instructions:
+1. Load model: model = YOLO('/home/sj/working_dir/3m/mandibular_canal_yolo11_best.pt')
+2. Run inference: results = model('path/to/image.jpg')
+3. Display results: results[0].show()

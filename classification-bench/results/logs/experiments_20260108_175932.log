@@ -1,0 +1,29 @@
+2026-01-08 17:59:32,345 - INFO - ================================================================================
+2026-01-08 17:59:32,345 - INFO - Data Augmentation Study Started
+2026-01-08 17:59:32,345 - INFO - Device: cuda:3
+2026-01-08 17:59:32,345 - INFO - Models: 9 models
+2026-01-08 17:59:32,345 - INFO - Sample sizes: [300, 500, 800, 1000, 1500, 1800]
+2026-01-08 17:59:32,345 - INFO - Augmentation percentages: [0, 10, 30, 50, 100, 120, 150, 200, 500]
+2026-01-08 17:59:32,345 - INFO - ================================================================================
+2026-01-08 17:59:32,411 - INFO - Found existing results file: /home/sj/working_dir/3m-project-128/classification-bench/results/augmentation_study_results.xlsx. Skipping training and generating plots.
+2026-01-08 17:59:33,670 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_vs_augmentation.png
+2026-01-08 17:59:36,230 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_heatmap.png
+2026-01-08 17:59:37,409 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/f1_vs_augmentation.png
+2026-01-08 17:59:39,672 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/densenet121_PR_mosaic.png
+2026-01-08 17:59:41,919 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/densenet121_ROC_mosaic.png
+2026-01-08 17:59:44,345 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/efficientnet_b0_PR_mosaic.png
+2026-01-08 17:59:46,473 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/efficientnet_b0_ROC_mosaic.png
+2026-01-08 17:59:48,641 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/mobilenet_v2_PR_mosaic.png
+2026-01-08 17:59:50,768 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/mobilenet_v2_ROC_mosaic.png
+2026-01-08 17:59:52,935 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/resnet18_PR_mosaic.png
+2026-01-08 17:59:55,075 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/resnet18_ROC_mosaic.png
+2026-01-08 17:59:57,244 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/resnet50_PR_mosaic.png
+2026-01-08 17:59:59,385 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/resnet50_ROC_mosaic.png
+2026-01-08 18:00:01,763 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/shufflenet_v2_x1_0_PR_mosaic.png
+2026-01-08 18:00:03,894 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/shufflenet_v2_x1_0_ROC_mosaic.png
+2026-01-08 18:00:06,000 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/squeezenet1_0_PR_mosaic.png
+2026-01-08 18:00:08,117 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/squeezenet1_0_ROC_mosaic.png
+2026-01-08 18:00:10,241 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/vgg16_PR_mosaic.png
+2026-01-08 18:00:12,366 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/vgg16_ROC_mosaic.png
+2026-01-08 18:00:14,531 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/wide_resnet50_2_PR_mosaic.png
+2026-01-08 18:00:16,908 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/wide_resnet50_2_ROC_mosaic.png

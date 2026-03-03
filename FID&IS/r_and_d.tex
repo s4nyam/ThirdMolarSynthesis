@@ -1,0 +1,153 @@
+% Results and Discussion Section for MolarSynTh Paper
+% Copy this content to your main LaTeX document
+
+\section{Results and Discussion}
+
+\subsection{Experimental Setup and Dataset Composition}
+
+Our experimental evaluation encompassed both conditional and unconditional versions of GANs and DPMs trained on the curated third molar dataset. The training dataset consisted of 5,416 ROIs of size 128×128 pixels, which was subsequently divided for different experimental conditions. For conditional models, we used 3,850 images (550 images per class across 7 classes: 1, 2A, 2B, 2C, 3A, 3B, 3C), ensuring balanced representation across all anatomical classifications. For unconditional models, we utilized 3,000 images representing the general distribution of third molar ROIs without class conditioning.
+
+To maintain experimental consistency, we generated an equal number of synthetic images for each model configuration: 3,850 images for conditional models (550 per class) and 3,000 images for unconditional models. This approach enabled direct comparison between training and synthetic distributions across all model variants.
+
+\subsection{Quantitative Evaluation Metrics}
+
+\subsubsection{Fréchet Inception Distance (FID) Analysis}
+
+The FID scores provide insight into the distributional similarity between synthetic and real images, with lower values indicating higher quality and more realistic synthetic data generation. Our comprehensive evaluation included three distinct comparison sets:
+
+\textbf{Set 1 - Conditional Model Comparisons:} Table \ref{tab:fid_overall} presents the overall FID scores for conditional models. The results demonstrate that conditional diffusion models (cDiff) achieved the most favorable comparison with the training dataset, recording an FID of 68.19 when compared to the conditional training set (training-c). This represents the lowest FID score among all conditional model comparisons, indicating superior generation quality and better preservation of the underlying data distribution.
+
+In contrast, the comparison between conditional GAN (cGAN) and training data yielded a substantially higher FID of 219.11, suggesting greater distributional divergence. The inter-model comparison between cDiff and cGAN resulted in an FID of 208.76, indicating significant differences in their respective generation strategies and output distributions.
+
+\begin{table}[htbp]
+\centering
+\caption{Overall FID Scores for Different Model Comparisons}
+\label{tab:fid_overall}
+\begin{tabular}{|l|l|l|c|}
+\hline
+\textbf{Set} & \textbf{Model 1} & \textbf{Model 2} & \textbf{FID Score} \\
+\hline
+\multirow{3}{*}{Conditional} & cDiff & cGAN & 208.76 \\
+& cDiff & Training-c & \textbf{68.19} \\
+& cGAN & Training-c & 219.11 \\
+\hline
+\multirow{3}{*}{Unconditional} & Diff & GAN & 52.83 \\
+& Diff & Training & 34.28 \\
+& GAN & Training & \textbf{32.48} \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Set 2 - Class-wise Conditional Analysis:} The class-wise FID analysis revealed consistent patterns across all seven anatomical classes. Table \ref{tab:fid_classwise} summarizes the class-specific FID scores, demonstrating that cDiff consistently outperformed cGAN when compared to the training data across all classes. The class-wise FID scores for cDiff vs. training-c ranged from 85.13 (Class 1) to 120.26 (Class 6), with an average of approximately 102.92. This consistency suggests that the diffusion model maintains stable generation quality across different anatomical variations.
+
+Notably, Class 6 (corresponding to 3C - cervical contact with horizontal orientation) showed the highest FID scores across all comparisons, potentially indicating the inherent complexity of generating anatomically plausible images for this challenging configuration. The cGAN vs. training-c comparisons consistently yielded higher FID scores (ranging from 222.04 to 305.99), reinforcing the superior performance of the diffusion approach for conditional generation.
+
+\begin{table}[htbp]
+\centering
+\caption{Class-wise FID Scores for Conditional Models}
+\label{tab:fid_classwise}
+\scriptsize
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Class} & \textbf{cDiff vs cGAN} & \textbf{cDiff vs Training} & \textbf{cGAN vs Training} \\
+\hline
+0 (1) & 218.87 & \textbf{98.17} & 238.82 \\
+1 (2A) & 199.30 & \textbf{85.13} & 222.04 \\
+2 (2B) & 265.68 & \textbf{104.78} & 254.93 \\
+3 (2C) & 259.57 & \textbf{102.34} & 247.31 \\
+4 (3A) & 255.05 & \textbf{104.71} & 247.50 \\
+5 (3B) & 239.35 & \textbf{115.49} & 278.90 \\
+6 (3C) & 281.48 & \textbf{120.26} & 305.99 \\
+\hline
+\textbf{Average} & 245.61 & \textbf{102.92} & 256.50 \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Set 3 - Unconditional Model Analysis:} The unconditional models demonstrated notably different performance characteristics. Surprisingly, the unconditional GAN achieved the lowest FID score (32.48) when compared to the training dataset, outperforming the unconditional diffusion model (34.28). This suggests that for unconditional generation tasks, GANs may be more effective at capturing the global distribution of third molar ROIs without the complexity introduced by class conditioning.
+
+\subsubsection{Inception Score (IS) Evaluation}
+
+The Inception Score provides complementary insight into both the quality and diversity of generated images. Table \ref{tab:inception_scores} presents the IS results for all model configurations and their class-wise variants.
+
+\begin{table}[htbp]
+\centering
+\caption{Inception Scores for All Model Configurations}
+\label{tab:inception_scores}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Model/Dataset} & \textbf{IS Mean ± Std} & \textbf{Interpretation} \\
+\hline
+\multicolumn{3}{|c|}{\textbf{Overall Datasets}} \\
+\hline
+Training (Conditional) & 2.82 ± 0.10 & Reference (Conditional) \\
+Training (Unconditional) & 2.25 ± 0.07 & Reference (Unconditional) \\
+cDiff & \textbf{2.33 ± 0.05} & Best Conditional Synthetic \\
+cGAN & 1.71 ± 0.04 & Lowest Diversity \\
+Diff & 1.95 ± 0.03 & Moderate Performance \\
+GAN & \textbf{2.14 ± 0.05} & Best Unconditional Synthetic \\
+\hline
+\multicolumn{3}{|c|}{\textbf{Class-wise Performance Range}} \\
+\hline
+cDiff Classes & 2.13 - 2.24 & Consistent Quality \\
+cGAN Classes & 1.17 - 1.65 & Variable Quality \\
+Training-c Classes & 2.06 - 2.81 & Natural Variation \\
+\hline
+\end{tabular}
+\end{table}
+
+The IS results corroborate our FID findings and provide additional insights:
+
+\textbf{Conditional Models:} The conditional training dataset achieved the highest IS (2.82 ± 0.10), establishing the upper bound for synthetic generation quality. Among synthetic datasets, cDiff achieved an IS of 2.33 ± 0.05, representing 82.6\% of the training data quality. In contrast, cGAN achieved a significantly lower IS of 1.71 ± 0.04, indicating reduced image quality and/or diversity compared to both the training data and the diffusion model.
+
+\textbf{Unconditional Models:} The unconditional training dataset recorded an IS of 2.25 ± 0.07. The unconditional GAN achieved 2.14 ± 0.05 (95.1\% of training quality), while the unconditional diffusion model achieved 1.95 ± 0.03 (86.7\% of training quality). This aligns with our FID observations, suggesting that unconditional GANs may be particularly well-suited for this specific domain.
+
+\textbf{Class-wise IS Analysis:} The class-wise IS scores revealed interesting patterns in model consistency. The cDiff model demonstrated remarkable stability across classes, with IS scores ranging from 2.13 to 2.24 (coefficient of variation: 1.8\%). This consistency suggests robust performance across different anatomical configurations. Conversely, cGAN showed significant variation across classes (1.17 to 1.65, coefficient of variation: 12.3\%), indicating potential difficulty in maintaining consistent quality across different anatomical presentations.
+
+\subsection{Comparative Analysis and Model Performance}
+
+\subsubsection{Conditional vs. Unconditional Generation}
+
+Our results reveal a compelling trade-off between conditional control and generation quality. While conditional models provide explicit control over anatomical class generation, they generally achieved lower absolute performance compared to their unconditional counterparts. This phenomenon can be attributed to several factors:
+
+\begin{enumerate}
+    \item \textbf{Reduced Training Data per Class:} Conditional models effectively learn from 550 images per class, while unconditional models utilize the full 3,000-image distribution.
+    \item \textbf{Increased Model Complexity:} The additional conditioning mechanism introduces architectural complexity that may impact convergence and generation stability.
+    \item \textbf{Class Imbalance Effects:} Despite balanced synthetic generation, the underlying anatomical complexity varies significantly across classes.
+\end{enumerate}
+
+\subsubsection{Diffusion vs. GAN Performance}
+
+The comparative analysis between diffusion models and GANs reveals context-dependent superiority:
+
+\textbf{Conditional Generation:} Diffusion models demonstrated clear superiority in conditional settings, achieving 68.19 FID vs. 219.11 for GANs, and 2.33 IS vs. 1.71 for GANs. This advantage can be attributed to the iterative refinement process inherent in diffusion models, which may be particularly beneficial for maintaining anatomical consistency under class conditioning constraints.
+
+\textbf{Unconditional Generation:} GANs showed surprising effectiveness in unconditional settings, achieving 32.48 FID vs. 34.28 for diffusion, and 2.14 IS vs. 1.95 for diffusion. This suggests that GANs may be more effective at capturing global distributional characteristics when not constrained by conditioning requirements.
+
+\subsection{Clinical Relevance and Anatomical Consistency}
+
+The class-wise analysis provides valuable insights into the clinical applicability of our synthetic generation approach. The consistent performance of cDiff across all anatomical classes (Class 0-6) suggests that the model successfully learned meaningful anatomical relationships rather than merely memorizing texture patterns. This is particularly important for classes representing complex anatomical relationships, such as Class 6 (3C - cervical contact with horizontal orientation), which traditionally presents the greatest diagnostic challenge.
+
+The superior performance on simpler anatomical configurations (Classes 0-1, representing superior positioning) compared to complex cases (Classes 5-6, representing inferior positioning with various contact types) reflects the inherent difficulty gradation in clinical diagnosis, lending credibility to our computational approach.
+
+\subsection{Implications for Data Augmentation}
+
+Based on our quantitative evaluation, we recommend the following strategy for clinical data augmentation:
+
+\begin{enumerate}
+    \item \textbf{For Class-Specific Augmentation:} Utilize conditional diffusion models (cDiff) due to their superior FID performance (68.19 vs. 219.11) and consistent quality across classes.
+    \item \textbf{For General Dataset Expansion:} Consider unconditional GANs for their superior performance in unconditional settings (32.48 FID, 2.14 IS).
+    \item \textbf{For Balanced Augmentation:} Prioritize augmentation of underrepresented classes (Classes 5-6) where the models showed highest FID scores, indicating greater room for improvement.
+\end{enumerate}
+
+\subsection{Limitations and Future Directions}
+
+While our results demonstrate promising performance, several limitations warrant consideration:
+
+\begin{enumerate}
+    \item \textbf{Resolution Constraints:} The 128×128 pixel resolution, while computationally efficient, may limit the capture of fine anatomical details crucial for expert-level diagnosis.
+    \item \textbf{Evaluation Metrics:} FID and IS, while standard in generative modeling, may not fully capture clinically relevant anatomical consistency.
+    \item \textbf{Expert Validation:} Future work should incorporate radiologist evaluation to validate the clinical utility of synthetic images beyond computational metrics.
+\end{enumerate}
+
+Our quantitative analysis establishes a strong foundation for the clinical application of generative models in third molar analysis, with conditional diffusion models emerging as the preferred approach for controlled anatomical synthesis and unconditional GANs showing promise for general dataset augmentation tasks.

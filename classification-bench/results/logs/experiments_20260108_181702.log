@@ -1,0 +1,49 @@
+2026-01-08 18:17:02,066 - INFO - ================================================================================
+2026-01-08 18:17:02,066 - INFO - Data Augmentation Study Started
+2026-01-08 18:17:02,066 - INFO - Device: cuda:3
+2026-01-08 18:17:02,066 - INFO - Models: 9 models
+2026-01-08 18:17:02,066 - INFO - Sample sizes: [300, 500, 800, 1000, 1500, 1800]
+2026-01-08 18:17:02,066 - INFO - Augmentation percentages: [0, 10, 30, 50, 100, 120, 150, 200, 500]
+2026-01-08 18:17:02,066 - INFO - ================================================================================
+2026-01-08 18:17:02,132 - INFO - Found existing results file: /home/sj/working_dir/3m-project-128/classification-bench/results/augmentation_study_results.xlsx. Skipping training and generating plots.
+2026-01-08 18:17:03,369 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_vs_augmentation.png
+2026-01-08 18:17:05,928 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_heatmap.png
+2026-01-08 18:17:07,108 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/f1_vs_augmentation.png
+2026-01-08 18:17:07,289 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/resnet18_withgap.pdf
+2026-01-08 18:17:07,373 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/resnet18_withoutgap.pdf
+2026-01-08 18:17:07,457 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/resnet50_withgap.pdf
+2026-01-08 18:17:07,540 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/resnet50_withoutgap.pdf
+2026-01-08 18:17:07,623 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/vgg16_withgap.pdf
+2026-01-08 18:17:07,706 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/vgg16_withoutgap.pdf
+2026-01-08 18:17:08,014 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/mobilenet_v2_withgap.pdf
+2026-01-08 18:17:08,098 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/mobilenet_v2_withoutgap.pdf
+2026-01-08 18:17:08,182 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/densenet121_withgap.pdf
+2026-01-08 18:17:08,265 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/densenet121_withoutgap.pdf
+2026-01-08 18:17:08,349 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/efficientnet_b0_withgap.pdf
+2026-01-08 18:17:08,434 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/efficientnet_b0_withoutgap.pdf
+2026-01-08 18:17:08,519 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/shufflenet_v2_x1_0_withgap.pdf
+2026-01-08 18:17:08,608 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/shufflenet_v2_x1_0_withoutgap.pdf
+2026-01-08 18:17:08,692 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/squeezenet1_0_withgap.pdf
+2026-01-08 18:17:08,775 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/squeezenet1_0_withoutgap.pdf
+2026-01-08 18:17:08,858 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/wide_resnet50_2_withgap.pdf
+2026-01-08 18:17:08,941 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/wide_resnet50_2_withoutgap.pdf
+2026-01-08 18:17:09,681 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withgap/mosaics/_ALL_MODELS_accuracy_mosaic.pdf
+2026-01-08 18:17:10,606 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/accuracy_pdfs/withoutgap/mosaics/_ALL_MODELS_accuracy_mosaic.pdf
+2026-01-08 18:17:12,811 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/densenet121_PR_mosaic.png
+2026-01-08 18:17:14,944 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/densenet121_ROC_mosaic.png
+2026-01-08 18:17:17,082 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/efficientnet_b0_PR_mosaic.png
+2026-01-08 18:17:19,208 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/efficientnet_b0_ROC_mosaic.png
+2026-01-08 18:17:21,348 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/mobilenet_v2_PR_mosaic.png
+2026-01-08 18:17:23,474 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/mobilenet_v2_ROC_mosaic.png
+2026-01-08 18:17:25,635 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/resnet18_PR_mosaic.png
+2026-01-08 18:17:28,018 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/resnet18_ROC_mosaic.png
+2026-01-08 18:17:30,182 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/resnet50_PR_mosaic.png
+2026-01-08 18:17:32,327 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/resnet50_ROC_mosaic.png
+2026-01-08 18:17:34,472 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/shufflenet_v2_x1_0_PR_mosaic.png
+2026-01-08 18:17:36,598 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/shufflenet_v2_x1_0_ROC_mosaic.png
+2026-01-08 18:17:38,697 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/squeezenet1_0_PR_mosaic.png
+2026-01-08 18:17:40,805 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/squeezenet1_0_ROC_mosaic.png
+2026-01-08 18:17:43,141 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/vgg16_PR_mosaic.png
+2026-01-08 18:17:45,268 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/vgg16_ROC_mosaic.png
+2026-01-08 18:17:47,435 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/pr_curves/mosaics/wide_resnet50_2_PR_mosaic.png
+2026-01-08 18:17:49,592 - INFO - Saved: /home/sj/working_dir/3m-project-128/classification-bench/results/plots/roc_curves/mosaics/wide_resnet50_2_ROC_mosaic.png

@@ -1,0 +1,43 @@
+
+DENTAL IMAGE CLASSIFICATION INSTRUCTIONS
+=======================================
+
+Dear Colleagues,
+
+You have been assigned a set of dental images for manual classification. 
+These images were initially predicted as Class 1+ by our AI model, but require 
+human verification and detailed classification.
+
+TASK:
+-----
+1. Review each image in your assigned folder
+2. Classify each image according to the dental classification system
+3. Enter your classification in the corresponding Excel spreadsheet
+
+CLASSIFICATION CATEGORIES:
+-------------------------
+- Class 0: 1
+- Class 1: 2A 
+- Class 2: 2B
+- Class 3: 2C
+- Class 4: 3A
+- Class 5: 3B
+- Class 6: 3C
+
+SPREADSHEET USAGE:
+-----------------
+1. Open the Excel file: 'classification_tracking.xlsx'
+2. Go to your assigned sheet (named with your name)
+3. For each filename, enter the correct class in the 'Predicted_Class' column
+4. Save the file regularly
+
+IMPORTANT NOTES:
+---------------
+- Please classify ALL images assigned to you
+- If you're unsure about an image, mark it as 'UNCERTAIN' and add a note
+- Contact the team lead if you encounter any issues
+- Expected completion time: Week 42
+
+Thank you for your contribution to this important classification task!
+
+Contact: sanyam.jain@dent.au.dk for any questions and keep ruben.pauwels@dent.au.dk in CC.

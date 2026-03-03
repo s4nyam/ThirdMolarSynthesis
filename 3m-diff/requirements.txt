@@ -1,0 +1,16 @@
+h5py
+matplotlib
+natsort
+numpy
+opencv_contrib_python
+pandas
+scipy
+tqdm
+retinaface-pytorch
+diffusers
+basicSR
+einops
+nvitop
+datasets
+torchinfo
+webdataset
