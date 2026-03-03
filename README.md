@@ -1,12 +1,14 @@
 # Synthesizing Third Molars with Denoising Diffusion Probabilistic Models and Generative Adversarial Networks
 
+
+These links need to be upddated
 [![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-preprint-red)](https://arxiv.org/abs/2507.09227v1)
 [![arXiv](https://img.shields.io/badge/highquality-paper-pink)](https://drive.google.com/file/d/1iRBodVYvZ93cZXr_cXxhw19ELZE6OPCQ/view?usp=sharing)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange)](https://pytorch.org/)
 [![pyngrok](https://img.shields.io/badge/PyNgRok-7.2%2B-yellow)](https://pypi.org/project/pyngrok/)
-
+These links need to be upddated
 
 > 📢 Official PyTorch implementation of the **Third Molar and Mandibular Canal Synthesis**:  
 > **Synthesizing Third Molars with Denoising Diffusion Probabilistic Models and Generative Adversarial Networks**  
