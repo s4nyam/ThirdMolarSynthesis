@@ -111,7 +111,7 @@ Ruben Pauwels<sup>1,10</sup>**
 <sup>9</sup> Melbourne Dental School, University of Melbourne, Victoria, Australia  
 <sup>10</sup> ITU/WHO/WIPO Global Initiative on Artificial Intelligence for Health, Topic Group Oral Health, Geneva, Switzerland  
 
-📧 **Correspondence:** ruben.pauwels@dent.au.dk
+📧 **Correspondence:** sanyam.jain@dent.au.dk
 
 ---
 
