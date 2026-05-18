@@ -90,13 +90,7 @@ To use this table in your reseach, you can cite using:
 
 - Gratitude to the open-source community for datasets and tools.
 - Computing resources were supported by ECE and MaLeCi Aarhus University, Denmark. LUMI supercomputers were also used during the experimentation and ablation studies.
-
-**Sanyam Jain<sup>1,10*</sup>, Sara Haghighat<sup>1,10</sup>, Johan Andreas Balle Rubak<sup>1</sup>,  
-Mostafa Aldesoki<sup>2,10</sup>, Akhilanand Chaurasia<sup>3,10</sup>,  
-Sarah Sadat Ehsani<sup>4,10</sup>, Faezeh Dehghan Ghanatkaman<sup>5,10</sup>,  
-Ahmad Badruddin Ghazali<sup>6,10</sup>, Julien Issa<sup>7,10</sup>,  
-Basel Khalil<sup>8,10</sup>, Rishi Ramani<sup>9,10</sup>,  
-Ruben Pauwels<sup>1,10</sup>**
+**Sanyam Jain<sup>1,10*</sup>, Sara Haghighat<sup>1,10</sup>, Johan Andreas Balle Rubak<sup>1</sup>, Mostafa Aldesoki<sup>2,10</sup>, Akhilanand Chaurasia<sup>3,10</sup>, Sarah Sadat Ehsani<sup>4,10</sup>, Faezeh Dehghan Ghanatkaman<sup>5,10</sup>, Ahmad Badruddin Ghazali<sup>6,10</sup>, Julien Issa<sup>7,10</sup>, Basel Khalil<sup>8,10</sup>, Rishi Ramani<sup>9,10</sup>, Louise Hauge Matzen<sup>11</sup>, Antonin Tichy<sup>10,12,13</sup>, Falk Schwendicke<sup>12</sup>, Ruben Pauwels<sup>1,10</sup>**
 
 ---
 
@@ -110,6 +104,9 @@ Ruben Pauwels<sup>1,10</sup>**
 <sup>8</sup> Private Practice, Stockholm, Sweden  
 <sup>9</sup> Melbourne Dental School, University of Melbourne, Victoria, Australia  
 <sup>10</sup> ITU/WHO/WIPO Global Initiative on Artificial Intelligence for Health, Topic Group Oral Health, Geneva, Switzerland  
+<sup>11</sup> Section for Oral Radiology and Endodontics, Department of Dentistry and Oral Health, Aarhus University, Aarhus, Denmark  
+<sup>12</sup> Department of Conservative Dentistry, Periodontology and Digital Dentistry, LMU University Hospital, LMU Munich, Germany  
+<sup>13</sup> Institute of Dental Medicine, Charles University, Prague, Czech Republic  
 
 📧 **Correspondence:** sanyam.jain@dent.au.dk
 
