@@ -116,6 +116,7 @@ To use this table in your reseach, you can cite using:
 
 ## More results
 
+The synthetic data is released at - https://zenodo.org/records/20269317
 
 
 <p align="center">
